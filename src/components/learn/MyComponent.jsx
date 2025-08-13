@@ -6,7 +6,9 @@ const MyComponent = () => {
     return (
         <>
             <div>Heyyyy</div>
-            <div className='child'>Child</div>
+            <div className='child'
+                style={{ borderRadius: "10px" }}
+            >Child</div>
         </>
 
     )
