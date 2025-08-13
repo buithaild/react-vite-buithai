@@ -27,20 +27,33 @@ const App = () => {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
-  // addNewTodo()
   return (
     <div className="todo-container">
       <div className="todo-title">Todo List</div>
+
       <TodoNew
         addNewTodo={addNewTodo}
       />
-      <TodoData
-        todoList={todoList}
+      {todoList.length > 0 ?
+        <TodoData
+          todoList={todoList}
+        />
+        :
+        <div className='todo-image'>
+          <img className='logo' src={reactLogo} />
+        </div>
+      }
 
-      />
-      <div className='todo-image'>
-        <img className='logo' src={reactLogo} />
-      </div>
+      {/* {todoList.length > 0 &&
+        <TodoData
+          todoList={todoList}
+        />
+      }
+      {todoList.length === 0 &&
+        <div className='todo-image'>
+          <img className='logo' src={reactLogo} />
+        </div>
+      } */}
     </div>
   )
 }
