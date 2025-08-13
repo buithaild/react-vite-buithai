@@ -1,8 +1,11 @@
 
 const TodoData = (props) => {
     //props là 1 object
-    const { todoList } = props
-    console.log(">>> check props: ", todoList)
+    const { todoList, deleteTodo } = props
+
+    const handleClick = (id) => {
+        deleteTodo(id)
+    }
 
     return (
         <div className='todo-data'>
@@ -10,9 +13,13 @@ const TodoData = (props) => {
                 console.log(">>> check:", item, "--- ", index);
 
                 return (
-                    <div className={`todo-item`} key={item.index}>
+                    <div className={`todo-item`} key={item.id}>
                         <div>{item.name}</div>
-                        <button>Delete</button>
+                        <button
+                            onClick={() => handleClick(item.id)}
+                            style={{ cursor: "pointer" }}
+                        >
+                            Delete</button>
                     </div>
                 )
             })}
