@@ -2,17 +2,14 @@ import { useState } from "react"
 
 const TodoNew = (props) => {
 
-    //useState hook
-    // const valueInput = "eric"
-    const [valueInput, setValueInput] = useState("eric")
+    const [valueInput, setValueInput] = useState("thai")
+
+    const { addNewTodo } = props
 
     const handleClick = () => {
-        console.log(">>> check valueInput: ", valueInput)
+        addNewTodo(valueInput)
     }
 
-    // const handleOnChange = (event) => {
-    //     console.log(">>> handleOnChange", event.target.value)
-    // }
 
     const handleOnChange = (name) => {
         setValueInput(name)
