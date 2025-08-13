@@ -7,16 +7,13 @@ const TodoData = (props) => {
     const { name, age, data } = props;
     return (
         <div className='todo-data'>
-            <div>My name is {props.name}</div>
-            <div>My age is {props.age}</div>
-            <div>My data address is {props.data.address}</div>
-            <div>My data country is {props.data.country}</div>
-            <div>Learning React</div>
-            <div>Watching yt</div>
-
-            <div>C2 My name is {name}</div>
-            <div>C2 My age is {age}</div>
-            <div>C2 My data address is {data.address}</div>
+            <div>Learning Math</div>
+            <div>Watching TT</div>
+            <div>My name is {name}</div>
+            <div>My age is {age}</div>
+            <div>
+                {JSON.stringify(props.todoList)}
+            </div>
         </div>
     )
 }
