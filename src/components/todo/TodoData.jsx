@@ -10,7 +10,7 @@ const TodoData = (props) => {
                 console.log(">>> check:", item, "--- ", index);
 
                 return (
-                    <div className="todo-item">
+                    <div className={`todo-item`} key={item.index}>
                         <div>{item.name}</div>
                         <button>Delete</button>
                     </div>
@@ -18,7 +18,7 @@ const TodoData = (props) => {
                 )
             })}
             <div>
-                {JSON.stringify(props.todoList)}
+                {/* {JSON.stringify(props.todoList)} */}
             </div>
         </div>
     )

@@ -9,16 +9,10 @@ const App = () => {
 
   const [todoList, setTodoList] = useState([
 
-    { id: 1, name: 'Learning English' },
-    { id: 2, name: 'Watching YT' },
+    // { id: 1, name: 'Learning English' },
+    // { id: 2, name: 'Watching YT' },
   ])
 
-  const val = 'Thai'
-  const val1 = 26
-  const data = {
-    address: "Ha Noi",
-    country: "Viet Nam"
-  }
 
   const addNewTodo = (name) => {
     const newTodo = {
@@ -41,9 +35,6 @@ const App = () => {
         addNewTodo={addNewTodo}
       />
       <TodoData
-        name={val}
-        age={val1}
-        data={data}
         todoList={todoList}
 
       />
