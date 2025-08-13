@@ -1,16 +1,22 @@
 
 const TodoData = (props) => {
     //props là 1 object
-    console.log(">>> check props: ", props)
+    const { todoList } = props
+    console.log(">>> check props: ", todoList)
 
-    //Destructuring
-    const { name, age, data } = props;
     return (
         <div className='todo-data'>
-            <div>Learning Math</div>
-            <div>Watching TT</div>
-            <div>My name is {name}</div>
-            <div>My age is {age}</div>
+            {todoList.map((item, index) => {
+                console.log(">>> check:", item, "--- ", index);
+
+                return (
+                    <div className="todo-item">
+                        <div>{item.name}</div>
+                        <button>Delete</button>
+                    </div>
+
+                )
+            })}
             <div>
                 {JSON.stringify(props.todoList)}
             </div>
