@@ -32,4 +32,4 @@ const TodoNew = (props) => {
     )
 }
 
-export { TodoNew }
+export default TodoNew 

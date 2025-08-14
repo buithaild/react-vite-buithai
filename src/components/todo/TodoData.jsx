@@ -27,4 +27,4 @@ const TodoData = (props) => {
     )
 }
 
-export { TodoData }
+export default TodoData 
