@@ -10,7 +10,7 @@ const ViewUserDetail = (props) => {
     } = props
     return (
         <Drawer
-            title="Basic Drawer"
+            title="Detail User"
             closable={{ 'aria-label': 'Close Button' }}
             onClose={() => {
                 setDataDetail(null);
@@ -25,7 +25,6 @@ const ViewUserDetail = (props) => {
                     <p>Email: {dataDetail.email}</p>
                     <p>Phone Number: {dataDetail.phone}</p>
                 </>
-
                 :
                 <><p>Khong co du lieu</p></>
             }

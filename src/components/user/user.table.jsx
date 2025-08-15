@@ -1,8 +1,9 @@
-import { Space, Table, Tag } from 'antd';
+import { Space, Table, Tag, Popconfirm, notification } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import UpdateUserModal from './update.user.modal';
 import { useState } from 'react';
 import ViewUserDetail from './view.user.detail';
+import { deleteUserAPI } from '../../services/api.service';
 const UserTable = (props) => {
     const { dataUsers, loadUser } = props
 
@@ -11,6 +12,8 @@ const UserTable = (props) => {
 
     const [dataDetail, setDataDetail] = useState(null)
     const [isDetailOpen, setIsDetailOpen] = useState(false)
+
+
 
 
     const columns = [
@@ -49,7 +52,17 @@ const UserTable = (props) => {
                                 setIsModalUpdateOpen(true)
                             }}
                             style={{ cursor: "pointer", color: "gray" }} />
-                        <DeleteOutlined style={{ cursor: "pointer", color: "red" }} />
+                        <Popconfirm
+                            title="Xoa nguoi dung"
+                            description="Ban chac chan xoa user nay?"
+                            onConfirm={() => handleDeleteUser(record._id)}
+                            okText="Yes"
+                            cancelText="No"
+                            placement='left'
+                        >
+                            <DeleteOutlined style={{ cursor: "pointer", color: "red" }}></DeleteOutlined>
+                        </Popconfirm>
+
                     </div>
 
                 </>
@@ -58,6 +71,22 @@ const UserTable = (props) => {
             ),
         }
     ];
+
+    const handleDeleteUser = async (id) => {
+        const res = await deleteUserAPI(id);
+        if (res.data) {
+            notification.success({
+                message: "Delete user",
+                description: "Xoa user thanh cong"
+            })
+            await loadUser()
+        } else {
+            notification.error({
+                message: "Error delete user",
+                description: JSON.stringify(res.message)
+            })
+        }
+    }
 
 
 
