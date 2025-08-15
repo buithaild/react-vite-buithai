@@ -5,7 +5,6 @@ import axios from "axios"
 import { createUserAPI } from "../../services/api.service"
 
 const UserForm = (props) => {
-    console.log(">> check: ", props);
 
     const { loadUser } = props
     const [fullName, setFullName] = useState("")
