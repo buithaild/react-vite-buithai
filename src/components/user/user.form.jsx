@@ -1,7 +1,6 @@
 import { Button, notification, Modal } from "antd"
 import Input from "antd/es/input/Input"
 import { useState } from "react"
-import axios from "axios"
 import { createUserAPI } from "../../services/api.service"
 
 const UserForm = (props) => {
